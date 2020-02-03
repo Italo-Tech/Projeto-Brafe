@@ -1,0 +1,383 @@
+/*Reset*/
+
+body, h1, h2, h3, p, ul{
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    font-family: Georgia, serif;
+    color: #252525;
+}
+
+* {
+    box-sizing: border-box; /* Seleciona todos os elementos do site, todos os elementos do meu site vão somar
+    a borda e o padding ao seu conteúdo final   */
+    /*border: 1px solid red;*/
+}
+            /* Menu */
+.menu{
+    background: #252525; /* Cor de fundo */
+    padding: 20px 0; /* Margem de 20px para cima e 0 para direita */
+}
+
+.menu-container{
+    max-width: 960px; /* Largura máxima de 960px, ajuda para deixar o site responsivo */
+    margin: 0 auto; /* Centraliza o container / 0 pra cima e baixo e auto para os lados*/
+}
+
+    /* Tirando o bug de 2 floats num só container */
+    /* Pseudo elemento */
+.menu-container::after, .menu-container::before{
+    content: ''; /* Conteúdo, pode ser assim mesmo vazio mas precisa ter o content*/
+    display: table;
+    clear: both; /* Limpar os floats */
+}
+
+a.menu-logo{
+    display: block; /* Cria um elemento que ocupa 100% do site */
+    float: left;  /* Flutuar a esquerda */
+    margin-left: 10px; /* Alinha com os conteúdos abaixo */
+}
+
+.menu-nav{
+    float: right; /* Flutuar a direita */
+    margin-right: 10px; /* Margem a direita */
+}
+
+.menu-nav li{
+    display: inline-block; /* Deixou alinhado a lista de navegação */
+}
+
+.menu-nav a{
+    display: block;
+    padding: 10px; /* Aumenta a área dos links de navegação */
+    text-decoration: none; /* Sem decoração de texto */
+    color:#fff; /* Cor */
+    font-size: 1.125em; /* Tamanho da fonte */
+}
+
+            /* Main - Intro */
+.intro{
+    background: url('../img/bg-intro.jpg') no-repeat center center; /* Colocando imagem de fundo */
+    background-size: cover; /* Define que meu background sempre assuma 100% 
+    ajuda muito em resposvidade*/
+    padding: 150px 0; /* Margem interna de 150px pra cima/baixo e 0 para os lados */
+    text-align: center;
+    color: #fff
+}
+
+.intro h1{
+    text-transform: uppercase; /* H1 todo em letras Maiúsculas */
+    font-size: 3em;
+}
+
+    /* Pseudo elemento */
+.intro h1::after{
+    content: ''; /* conteúdo obs:vazio mesmo */
+    display: block; 
+    width: 20px; /* Largura */
+    height: 4px; /* Altura */
+    background: #fff;
+    margin: 10px auto; /* 10px cima/baixo e auto lados */
+}
+
+.intro p{
+    font-style: italic;
+    font-size: 1.125em;
+}
+
+
+        /* Seção 1 / Sobre */
+.sobre{
+    padding: 60px 0;
+}
+
+.sobre-container{
+    max-width: 960px; /* Largura máxima de 960px, ajuda para deixar o site responsivo */
+    margin: 0 auto; /* Centraliza o container / 0 pra cima e baixo e auto para os lados*/
+}
+
+/* Tirando o bug de 2 floats num só container */
+    /* Pseudo elemento */
+.sobre-container::after, .sobre-container::before{
+    content: ''; /* Conteúdo, pode ser assim mesmo vazio mas precisa ter o content*/
+    display: table;
+    clear: both; /* Limpar os floats */
+}
+
+.sobre h2{
+    text-align: center;
+    font-size: 2.25em;
+    margin-bottom:60px ;
+}
+
+.sobre-item{
+    width: 460px;
+    float: left; /* Faz as imagens ficar uma ao lado da outras */
+    margin: 0 10px; /* Margens de imagem pra imagem */ 
+}
+
+.sobre-item img{
+    display: block;
+    max-width: 100%; /* Redimensiona a imagem a partir do tamanho da tela */
+}
+
+.sobre-item h3{
+    font-size: 2.25em; /* Tamanho da fonte */
+    line-height: 1em; /* Altura da linha */
+    background: #252525; /* Cor de fundo */
+    width: 220px; /* Largura */
+    color: white; /* Cor */
+    font-style: italic; /* Estilo de fonte */
+    font-weight: normal; /* Meio que tira o Negrito da palavra */
+    text-align: center; /* Posicionamento da palavra */
+    padding:5px 0 10px 0 ; /* Alinha 5px-cima, 0-direita, 10px-baixo e 0-esquerda */
+    
+    position: relative; /* Posição relativa para colocar o H3 acima dao img */
+    top:-25px; /* Ajustando o H3 acima da imagem */
+}
+
+/* O > p fala somente com o p da classe desejada.
+Exemplo: .sobre > p{}*/ 
+.sobre > p {
+    font-size: 1.125em;
+    line-height: 1.4; /* Altura de altura */ 
+    font-style: italic;
+    text-align: center;
+    margin: 20px auto;
+    max-width: 460px;
+}
+
+            /* Seção 2 / Produtos */
+.produtos  {
+    background: #e7e4d8;
+    padding: 60px 0;
+    border-top:3px solid #d6d3c8;
+    border-bottom:3px solid #d6d3c8;
+}
+
+.produtos-container{
+    max-width: 960px;
+    margin: 0 auto; /*Alinha o container ao centro*/
+}
+
+.produtos-container::before, .produtos-container::after{
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.produtos-item{
+    width: 300px;
+    float: left;
+    margin: 0 10px 20px 10px;
+}
+
+.produtos-item h2{
+    text-align: center;
+    font-size: 2.25em;
+    margin-bottom: 20px;
+}
+
+/* Pseudo elemento para criar a bolinha */
+.produtos-item h2::before{
+    content: '';
+    display: block;
+    width: 100px; /* Largura */
+    height: 100px; /* Altura */
+    background: currentColor;
+    border-radius: 50%; /* Formando a bolinha */
+    margin: 20px auto; /* Centralizar */
+
+    border: 5px solid #e7e4d8;  
+    box-shadow: 0 0 0 10px currentColor; /* Sombra */
+    /* O currentColor copia a cor da propriedade color e a aplica em outras 
+        propriedades de cor,como background, border e etc */
+}
+
+/* Cor Paulista */
+h2.produtos-paulista::before{
+    color: #492901;
+}
+/* Cor Carioca */
+h2.produtos-carioca::before{
+    color: #c17139;
+}
+
+/* Cor Mineiro */
+h2.produtos-mineiro::before{
+    color: #d7a54d;
+}
+
+.produtos-item p{
+    font-size:0.875em;
+    line-height: 1.4em;
+
+}
+
+.produtos-btn{
+    width: 180px; /* Largura */
+    border: 3px solid; /* Borda */
+    color: #252525; /* Cor */
+    text-decoration: none; /* Decoração de Texto */
+    display: block; 
+    font-size: 1.125em; /* Tamanho da fonte */
+    font-weight: bold; /* Meio que coloca o negrito da palavra */
+    text-transform: uppercase; /* Letras Maiúsculas */
+    text-align: center; /* Alinhamento de Texto no centro */
+    padding: 15px 0; 
+    margin: 20px auto 0 auto; /* Alinhando o botão ao centro da tela */
+}
+
+            /* Seção 3 / Locais */
+ /*Definindo o container*/           
+.locais{
+    max-width: 960px; /* largura máxima */
+    margin: 0 auto; /* Centralizar */
+    padding: 20px 0;
+}
+
+.locais-item{
+    clear: both; /* Limpei o flutuamento. Sem ele as imagens ficam desajustadas */
+    margin: 60px auto;
+}
+
+/* Limpador do float */
+.locais-item::after, .locais-item::before {
+    clear: both;
+    display: table;
+    content: '';
+}
+
+.locais-item img{
+    width: 460px;
+    float: left;
+    display: block;
+    margin: 0 10px; /* Criando uma margem nas laterais das imagens */
+}
+
+.locais-item > div{
+    width: 460px;
+    float: left;
+    display: block;
+    margin: 0 10px; /* Criando uma margem nas laterais das imagens */
+}
+
+.locais-item h2{
+    font-size: 2.25em;
+    margin-bottom: 20px;
+}
+
+.locais-item p{
+    font-size: 1.125em;
+    line-height: 1.4em;
+    max-width: 320px; /* Não deixar correr até o final */
+    margin-bottom: 40px;
+}
+
+.locais-item a{
+    font-size: 1.125em; /* Tamanho da fonte */
+    text-transform: uppercase; /* Letras Maiúsculas */
+    text-decoration: none; /* Decoração de Texto */
+    border: 3px solid; /* Borda */
+    color: #252525; /* Cor */
+    padding: 10px 20px; /* Dimensão */
+
+}
+
+        /*Assine*/
+.assine{
+    background: #e7e4d8;
+    padding: 30px 0;
+}
+
+.assine-container{
+    max-width: 960px;
+    margin: 0 auto; /* Centralizar */
+}
+
+.assine-container::after, .assine-container::before{
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.assine-info{
+    width: 460px;
+    margin: 0 10px;
+    float: left;
+}
+
+.assine-info h2{
+    font-size: 2.25em;
+}
+
+.assine-info p{
+    font-size: 1.5em;
+    font-style: italic;
+}
+
+.assine form{
+    width: 460px;
+    margin: 10px 10px 0 10px;
+    float: left;
+}
+
+.assine-form label{
+    display: none;
+}
+
+.assine input{
+    width: 320px; /* Largura */
+    border: 3px solid #252525; /* borda */
+    background: none; /* Sem cor de fundo */
+    font-size: 1.5em; /* Tamanho da fonte */
+    font-style: italic; /* Letras em itálico */
+    font-family: Georgia, serif; 
+    padding: 10px; /* dimensão cima e baixo 10px */
+    float: left; /* flutuar a esquerda */
+}
+/* Botão */
+.assine button{
+    background: #252525; /* cor de fundo */
+    font-family: Georgia, serif;
+    text-transform: uppercase; /* Letras maiúsculas */
+    font-size: 1.5em; /* tamanho da fonte */
+    width: 140px; /* Largura */
+    padding: 13px 0; /* Dimensão */
+    color:white; /* Cor */
+    border: none; /* Sem borda */
+    cursor: pointer; /* Cursor ao passar o mouse em cima do butão */
+}
+
+            /* Footer */
+.footer{
+    background: #d6d3c8; /* Cor de fundo */
+    padding: 40px 0; /* Dimensão de 40px-cima/baixo */
+}
+
+.footer-container{
+    max-width: 960px; /* Largura máxima */
+    margin: 0 auto; /* Alinhando ao centro da tela */
+}
+
+/* Quebrando o galho por ter dois floats no container e ajusta-los corretamente */
+.footer-container::after, .footer-container::before{
+    content: ''; 
+    display: table;
+    clear: both;
+}
+
+.footer p{
+    float: left; /* Flutuar a esquerda */
+    margin: 0 10px; /* Alinhando ao centro */
+    font-size: 1.125em; /* Tamanho da fonte */
+    line-height: 1.4em; /* Altura entre as linhas */
+}
+
+.footer img{
+    float: right;
+    margin: 0 10px;
+    display: block;
+}
